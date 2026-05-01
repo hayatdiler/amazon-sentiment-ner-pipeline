@@ -1,0 +1,13 @@
+# Veri dosyaları (Kaggle'dan indirilecekleri buraya yazıyoruz)
+*.csv
+*.bz2
+*.pkl
+
+# Python çevre dosyaları
+__pycache__/
+venv/
+.env
+
+# IDE ayarları
+.vscode/
+.idea/
