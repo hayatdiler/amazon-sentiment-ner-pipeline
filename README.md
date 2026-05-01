@@ -49,24 +49,29 @@ The models were evaluated using **5-Fold Cross-Validation** on the full 200K dat
 
 ---
 
-## 🔍 The Power of Hybrid Analysis: A Real-World Scenario
-Standard sentiment analysis tells you *how* a customer feels. This system tells you *why* they feel that way by linking sentiment to specific entities.
+## 🔍 The Power of Hybrid Analysis: Real-World Performance
+Standard sentiment analysis only tells you *how* a customer feels. This system tells you *why* they feel that way by linking sentiment to specific entities, even in complex "contrast" sentences.
 
-**Input Text:** 
+**Input Test Case:**  
 > *"I ordered the new Sony PlayStation 5 from the Amazon New York warehouse for $500, but it arrived two days late and the DualSense controller has a drift issue. Very disappointed!"*
 
 #### 1. Sentiment Engine (Logistic Regression)
-*   **Prediction**: `NEGATIVE` 🔴
-*   **System Accuracy**: **91.15%**
+*   **Result**: `NEGATIVE` 🔴
+*   **Confidence Score**: **84.37%**
+*   **Analysis**: The model correctly identifies the shift in sentiment after the "but" connector, overcoming the initial positive bias of brand names.
 
 #### 2. Named Entity Recognition (SpaCy NER)
+The system extracts business-critical entities to categorize feedback automatically:
+
 | Entity | Category | Description |
 | :--- | :--- | :--- |
-| **Sony** | `[ORG]` | Brand identification |
-| **PlayStation 5** | `[PRODUCT]` | Specific product identification |
-| **Amazon New York** | `[GPE/ORG]` | Location/Branch tracking |
-| **$500** | `[MONEY]` | Price point analysis |
-| **two days** | `[DATE]` | Logistic performance tracking |
+| **Sony** | `ORG` | Brand identification |
+| **PlayStation 5** | `PRODUCT` | Specific product identification |
+| **Amazon** | `ORG` | Retailer/Platform tracking |
+| **New York** | `GPE` | Geographic location of the warehouse |
+| **500** | `MONEY` | Price point verification |
+| **two days** | `DATE` | Delivery/Logistics delay tracking |
+| **DualSense** | `ORG` | Component-level issue detection |
 
 ---
 
