@@ -42,6 +42,13 @@ The models were evaluated using **5-Fold Cross-Validation** on the full 200K dat
 
 ---
 
+### 📈 Confusion Matrix (Champion Model)
+![Champion Confusion Matrix](champion_confusion_matrix.png)
+
+*The confusion matrix shows a high recall for negative reviews, which is critical for identifying customer dissatisfaction early.*
+
+---
+
 ## 🔍 The Power of Hybrid Analysis: A Real-World Scenario
 Standard sentiment analysis tells you *how* a customer feels. This system tells you *why* they feel that way by linking sentiment to specific entities.
 
