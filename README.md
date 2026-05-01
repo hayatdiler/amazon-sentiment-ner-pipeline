@@ -22,7 +22,7 @@ The system is trained on a **balanced dataset of 200,000 Amazon product reviews*
 
 ## 📊 Dataset
 The dataset used in this project is the **Amazon Reviews for Sentiment Analysis**, which can be downloaded from Kaggle.
-*   **Source**: [Kaggle - Amazon Reviews Dataset](https://www.kaggle.com/datasets/bittu/amazon-reviews-for-sentiment-analysis)
+*   **Source**: [Kaggle - Amazon Reviews for Sentiment Analysis](https://www.kaggle.com/datasets/bittlingmayer/amazonreviews)
 *   **Format**: The raw data is in `.bz2` format. After preprocessing, a balanced subset of 200,000 reviews was used for training and evaluation.
 
 ---
