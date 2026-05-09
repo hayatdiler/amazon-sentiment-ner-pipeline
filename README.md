@@ -17,6 +17,7 @@ The system is trained on a **balanced dataset of 200,000 Amazon product reviews*
 *   **Feature Extraction**: TF-IDF Vectorization with N-Grams ($ngram\_range=(1, 2)$) to capture complex phrases and contextual sentiment polarity.
 *   **Model Benchmarking**: Comprehensive comparison of Naive Bayes, Logistic Regression, Linear SVM, Random Forest, and XGBoost using **5-Fold Cross-Validation**.
 *   **Hybrid Analysis**: Integrated **SpaCy NER** (`en_core_web_sm`) to detect specific entities such as Brands, Products, Monetary values, and Locations within the reviews.
+*   **Bulk CSV Analysis**: Upload a CSV file containing multiple reviews for batch sentiment analysis with summary metrics and visualizations.
 
 ---
 
@@ -46,8 +47,23 @@ The models were evaluated using **5-Fold Cross-Validation** on the full 200K dat
 
 <img src="champion_confusion_matrix.png" width="800"/>
 
-
 *The confusion matrix shows a high recall for negative reviews, which is critical for identifying customer dissatisfaction early.*
+
+---
+
+## 🖥️ Dashboard
+
+The interactive Streamlit dashboard offers two analysis modes:
+
+### 1. Single Review Analysis
+Paste any Amazon review and get instant sentiment prediction with NER entity extraction.
+
+### 2. 📂 Bulk CSV Analysis *(New)*
+Upload a CSV file with a `review_text` column to analyze hundreds of reviews at once. The system returns:
+- Overall positive/negative breakdown with percentage metrics
+- Pie chart visualization
+- Per-review sentiment and confidence score table
+- Downloadable results as CSV
 
 ---
 
@@ -84,22 +100,24 @@ The system extracts business-critical entities to categorize feedback automatica
 *   `03_model_training.py`: Production-level model training and metric evaluation.
 *   `04_advanced_pipeline.py`: Algorithm benchmarking and NER integration tests.
 *   `05_final_comparison.py`: Final K-Fold validation and model serialization.
-*   `app.py`: **Streamlit** interactive dashboard for real-time analysis.
+*   `app.py`: **Streamlit** interactive dashboard with Single Review and Bulk CSV Analysis modes.
+
+---
 
 ## 🛠️ Setup & Execution
 
 1. **Clone the repository**:
 ```bash
-   git clone https://github.com/hayatdiler/amazon-sentiment-ner-pipeline.git
+git clone https://github.com/hayatdiler/amazon-sentiment-ner-pipeline.git
 ```
 
 2. **Install dependencies**:
 ```bash
-   pip install -r requirements.txt
-   python -m spacy download en_core_web_sm
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 3. **Run the Application**:
 ```bash
-   streamlit run app.py
+streamlit run app.py
 ```
